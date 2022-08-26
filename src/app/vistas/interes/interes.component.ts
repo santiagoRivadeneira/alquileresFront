@@ -13,6 +13,11 @@ export class InteresComponent implements OnInit {
   public propiedad: Propiedad = new Propiedad;
   public propiedad2: Propiedad = new Propiedad;
   public propiedad3: Propiedad = new Propiedad;
+
+  imagen1: string ="https://cdn.pixabay.com/photo/2016/11/18/17/20/living-room-1835923_960_720.jpg";
+  imagen2: string ="https://cdn.pixabay.com/photo/2015/10/20/18/57/furniture-998265_960_720.jpg";
+  imagen3: string ="https://imgar.zonapropcdn.com/avisos/1/00/48/23/19/63/720x532/1809087476.jpg";
+  
   
   constructor(public router: Router, public srvProp : PropiedadService) { 
     this.propiedad.precio = 320000;
