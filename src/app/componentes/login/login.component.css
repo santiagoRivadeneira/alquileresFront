@@ -1,0 +1,29 @@
+.row{
+    max-width: 50%;
+    margin-left: 23%;
+    margin-top: -50px;
+}
+
+/* .card-body{
+    background-color: red;
+} */
+
+.form-group1{
+    height: 30px;
+}
+
+.form-group2 a{
+    color: rgb(64, 127, 199);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/*botones que validan el login*/
+
+.btnRojo{
+    background-color: rgb(205, 210, 212);
+}
+
+.btnAzul{
+    background-color: rgb(194, 173, 173);
+}

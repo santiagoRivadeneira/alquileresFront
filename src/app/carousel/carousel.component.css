@@ -1,0 +1,135 @@
+
+.carousel-container{ 
+    text-align: center;
+    min-width: 100%; 
+    width: 100%; 
+    height: 100%;
+    margin-left: 6px;
+    margin-top: 6px;
+    border: 1px solid rgb(204, 182, 182);
+}
+
+.carousel-container img{
+    min-width: 100%; 
+    width: 100%;
+    display: none;
+}
+.carousel-container img.image-active{
+    display: block;
+    min-width: 100%; 
+    width: 100%; 
+    height: 100%;
+}
+
+/*botones*/
+.carousel-dot-container{
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin-bottom: 1rem;
+}
+
+
+.dot{
+    cursor: pointer;
+    height: 13px;
+    width: 13px;
+    margin: 0 5px;
+    background-color: rgb(9, 123, 223);
+    border-radius: 50%;
+    display: inline-block;
+    /* transition: opacity 0.s ease; */
+    opacity: 0.5;
+}
+
+.active,
+.dot:hover {
+    opacity: 1;
+}
+
+/*transisiones de imagenes*/
+.fade{
+    animation-name: fade;
+    animation-duration: 41s;
+}
+
+@keyframes fade {
+    from{
+        opacity: 0.8;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+/*botones laterales*/
+
+.btn-carousel{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15%;
+    padding: 0;
+    color: rgb(197, 24, 24);
+    text-align: center;
+    background: 0 0;
+    border: 0;
+    cursor: pointer;
+}
+
+button.btn-carousel.btn-prev{
+    left: 0; 
+}
+
+.btn-next{
+    right: 0;
+    /* background-color: aqua; */
+    font-size: 12px;
+    
+}
+
+.icon-carousel{
+    color: rgb(207, 72, 72); 
+    opacity: 0.5;
+    transition: all 0.15s ease;
+}
+
+.icon-carousel:hover{
+    opacity: 0.9;
+}
+
+.icon-carousel:active{
+    opacity: 0.5;
+}
+
+.icon-next,
+.icon-prev{
+    font-size: 45px;
+    width: 121px;
+
+    /* background-color: black; */
+}
+ 
+
+.btn{
+    background: none;
+    border: 0;
+    color: inherit;
+    /* cursor: default; */
+    font: inherit;
+    line-height: normal;
+    overflow: visible;
+    padding: 0; 
+    cursor: pointer;
+    width: 300px;
+    height: 300px;
+ }
+
+ 

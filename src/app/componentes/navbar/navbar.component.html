@@ -1,0 +1,83 @@
+<nav class="navbar navbar-expand-lg" id="navbar">
+    <div class="container-fluid">
+      <img src="assets/dueño.png" alt="imagenlogo" class="imagenLogo" routerLink="/home">
+      <button 
+        class="navbar-toggler" 
+        type="button" 
+        data-bs-toggle="collapse" 
+        data-bs-target="#navbarSupportedContent" 
+        aria-controls="navbarSupportedContent" 
+        aria-expanded="false" 
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav ms-auto"> <!--cambia el navbar a la derecha-->
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+                <li class="nav-item">
+                  <a 
+                  class="nav-link" 
+                  aria-current="page"
+                  data-bs-toggle="collapse"
+                  data-bs-target=".navbar-collapse.show"
+                  routerLink="/home">Inicio</a>
+                </li>
+                <li class="nav-item">
+                  <a 
+                  class="nav-link"
+                  aria-current="page"
+                  data-bs-toggle="collapse" 
+                  data-bs-target=".navbar-collapse.show"
+                  routerLink="/resultados">Inmuebles</a>
+                </li>
+                <li class="nav-item" *ngIf="srvLogin.email == ''">
+                  <a 
+                  class="nav-link"
+                  aria-current="page"
+                  data-bs-toggle="collapse" 
+                  data-bs-target=".navbar-collapse.show"
+                  routerLink="/miperfil">Mi perfil</a>      
+                </li>
+
+                <li class="nav-item dropdown" *ngIf="srvLogin.email != ''">
+                <!-- <li class="nav-item dropdown"> -->
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" 
+                  role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  {{srvLogin.email}}
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <li class="datosMiPerfil">
+                      <a class="dropdown-item" routerLink="/miperfil">
+                        <p>Editar perfil</p>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTig-zFtmBRabuRTZSXi0Ie1-bGKkSg6XlmHw&usqp=CAU">
+                      </a>
+                      <!-- <a class="dropdown-item">{{srvLogin.email}}</a> -->
+                      <a class="dropdown-item">Otro link</a>
+                      <a class="dropdown-item cerrarSesion" (click)="cerrarSesion()">Cerrar sesion</a>
+                    </li>
+                  </ul>
+                </li>
+            </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="col fondoTexto" *ngIf="srvLogin.email == ''">
+    <p><a data-bs-toggle="modal" data-bs-target="#exampleModal">Ingresa a tu cuenta</a> para una mejor experiencia</p>
+  </div>
+
+  <div class="col fondoTexto" *ngIf="srvLogin.email != ''">
+    <p>Bienvenido {{srvLogin.email}}</p>
+  </div>
+  
+  <div class="modal fade asassa" data-bs-keyboard="false" data-bs-backdrop="false" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" *ngIf="srv.modal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><- Volver</button>
+          <app-login></app-login>
+        </div>
+      </div>
+    </div>
+  </div>

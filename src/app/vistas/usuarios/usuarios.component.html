@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md 6 mx-auto mt-5 columnaPerfil">
+            <div class="card">
+
+                <div class="card-body" *ngIf="srvLogin.email == ''"> <!--perfil sin validar-->
+                    <!-- <h1 class="text-center">Aun no estas logeado</h1> -->
+                     <app-login></app-login>
+                </div>
+
+                <div class="card-body" *ngIf="srvLogin.email != ''"> <!--perfil validado-->
+                    <h1 class="text-center">Informacion del usuario</h1>
+                    <p>Nombre</p>
+                    <p>Correo electronico: {{srvLogin.email}}</p>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

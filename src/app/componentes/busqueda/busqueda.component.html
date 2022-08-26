@@ -1,0 +1,22 @@
+<select [(ngModel)]="srv2.propiedad" (change)="srv2.capturarPropiedad()">
+    <option value="" disabled="disabled">Tipo de propiedad</option>
+    <option *ngFor="let dato of srv2.datos2">
+        {{dato}}
+    </option>
+</select>
+
+<select [(ngModel)]="srv2.localidad" (change)="srv2.capturarLocalidadd()">
+    <option value="" disabled="disabled">Localidad</option>
+    <option *ngFor="let dato of srv2.datos3">
+        {{dato}}
+    </option>
+</select>
+
+<select [(ngModel)]="srv2.ambientes" (change)="srv2.capturarAmb()">
+    <option value="0">Cantidad de ambientes</option>
+    <option *ngFor="let dato of srv2.datos1">
+        {{dato}}
+    </option>
+</select>
+
+<button (click)="cambiarBusqueda()">Buscar</button>

@@ -1,0 +1,43 @@
+<div class="row">
+    <div class="col-md 6 mx-auto mt-5">
+        <div class="card">
+            <div class="card-body">
+                <h1 class="text-center">Inicia Sesion</h1>
+                 
+                <!--sacar autocompletado de mail y contrdaseña-->
+                <div class="form-group">
+                    <label>Ingresa tu email</label>
+                    <input type="email" class="form-control" placeholder="Email" [(ngModel)]="email" [ngModelOptions]="{standalone: true}">
+                    <br>
+                    <label>Ingresa tu contraseña</label>
+                    <input type="password" class="form-control" placeholder="Contraseña" [(ngModel)]="contrasena" [ngModelOptions]="{standalone: true}">
+                </div>
+                <br>
+                <div>
+                    <button id="btnRojo" class="btnRojo" *ngIf="!aux" (click)="enviar()">Continuar</button>
+                    <button class="btnAzul" *ngIf="aux" (click)="cerrarModal()" data-bs-dismiss="modal">Ingresar</button>
+                    <!-- <button data-bs-dismiss="modal" (click)="enviar()">Continuar</button> -->
+                </div>
+                 
+                <div class="form-group1 mt-3">
+                    <div>
+                        <p>{{respuesta}}</p>
+                    </div>
+                </div>
+
+                <!-- <div class="form-group2 mt-3">
+                    <div *ngIf="srv.modal">
+                        <p data-bs-dismiss="modal">¿Sos inmobiliaria o profesional y no tenes cuenta? 
+                            <a routerLink="/registro">Registrate</a>
+                        </p>
+                    </div>
+                    <div *ngIf="!srv.modal">
+                        <p>¿Sos inmobiliaria o profesional y no tenes cuenta? 
+                            <a routerLink="/registro" (click)="validar()">Registrate</a>
+                        </p>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="row row1">
+        <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4 columna1">
+            <div class="col fondo1">
+                <div class="img">
+                    <app-carousel 
+                        [images]="images" 
+                        [autoSlide]="true" 
+                        [indicators]="false" 
+                        [controls]="false" 
+                        [slideInterval]="6000">
+                    </app-carousel>
+                </div>
+                <div class="form-menu">
+                    <h2>Encontrá lo que buscas y más</h2>
+                    <div class="text-menu">
+                        <select [(ngModel)]="propiedad" (change)="capturarPropiedad()">
+                            <option value="">Tipo de propiedad</option>
+                            <option *ngFor="let dato of datos2">
+                              {{dato}}
+                            </option>
+                        </select>
+                        <select [(ngModel)]="localidad" (change)="capturarLocalidadd()">
+                            <option value="">Localidad</option>
+                            <option *ngFor="let dato of datos3">
+                              {{dato}}
+                            </option>
+                        </select>
+                        <button (click)="validarBusqueda()">Buscar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <!-- seccion 2 'destacados' -->
+    <h3 class="tituloSecc2">Los mas destacados</h3>
+    <app-destacados></app-destacados>
+    <!-- seccion 3 -->
+    <h3 class="tituloSecc2">También puede interesarte</h3>
+    <app-interes></app-interes>
+</div>

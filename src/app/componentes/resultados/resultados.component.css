@@ -1,0 +1,45 @@
+.col1{
+    margin-top: 3%;
+    margin-left: 16%;
+    width: 69%;
+}
+
+.respuesta{
+    margin-top: 30px;
+    margin-left: -2%;
+}
+
+.respuesta p{
+    margin-left: 2%;
+}
+
+.resultados{
+    height: 270px;
+    width: 100%;
+    margin-left: 1%;
+    border: 1px solid rgb(204, 182, 182);
+    background-color: white;
+    float: left;
+    margin-bottom: 4%;
+    margin-top: 2%;
+}
+
+.carousel{
+    height: 200px;
+    width: 46%;
+    margin-top: 2%;
+    margin-left: 2%;
+}
+
+.col2{
+    max-width: 40%;
+    height: 65%;
+    margin-top: 2%;
+    margin-left: 7%;
+    /* background-color: red; */
+}
+
+.col2 h3{
+    text-align: center;
+    margin-bottom: 30px;
+}

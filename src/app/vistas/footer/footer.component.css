@@ -1,0 +1,38 @@
+
+.row3{ 
+    border-top: 1px solid rgb(204, 182, 182);
+    margin: 0px 0px 0px 0px; /* Arriba | Derecha | Abajo | Izquierda */
+    border-radius: 3px;
+}
+
+.columna4{
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    
+}
+
+
+.pppLinks{
+    text-align: center;
+    width: 100%;
+   
+
+}
+
+.pppLinks p{
+    display: inline-block;
+    margin-right: 40px;
+    margin-top: 10px
+}
+
+.ppp{
+    width: 100%;
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+.ppp p{
+    margin-left: 40px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}

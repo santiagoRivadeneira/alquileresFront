@@ -1,0 +1,12 @@
+.row{ 
+    height: 200px;
+    margin: 0px;
+    padding: 0px;
+    background-color: blue;
+}
+
+@media (max-width: 600px) {
+    .row {
+        height: 500px;
+    }
+}

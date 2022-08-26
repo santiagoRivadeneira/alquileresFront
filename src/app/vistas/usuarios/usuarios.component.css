@@ -1,0 +1,13 @@
+.row{
+      margin-top: -20px;
+}
+
+.columnaPerfil{
+  
+    height: 50%; 
+}
+
+.card-body{ 
+    /* margin-bottom: -40px; */
+    height: 390px;
+}

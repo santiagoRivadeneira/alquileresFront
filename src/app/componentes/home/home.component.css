@@ -1,0 +1,162 @@
+.container{
+    min-width: 100%; 
+    width: 100%; 
+    margin-right: 0px;
+    padding-right: 0px;
+    margin-left: 0px;
+    /* padding-left: 0px; */
+}
+ 
+
+.columna1{
+    margin: 0px;
+    padding: 0px;
+    min-width: 100%; 
+    width: 100%;
+    height: 100%;
+    /* background-color: rgba(240, 248, 255, 0.856); */
+}
+ 
+
+/*--carousel de imagen---*/
+
+.row1{
+    width: 100%;
+    min-width: 100%; 
+    max-width: 100%; 
+}
+
+.row1 img {
+    max-width: 100%;
+    max-height: 100%;
+   }
+
+.img{  
+    height: 380px;
+    width: 100%;
+    border: none; 
+}
+
+
+/*-Encontrá lo que buscas y más-*/
+
+
+.form-menu{
+    position: absolute;
+    margin-top: -300px;
+    margin-left: 19%;
+    margin-right: 18%;
+    background-color: rgba(218, 206, 204, 0.856);
+    border: 1px solid rgb(204, 182, 182);
+    width: 60%;
+    height: 200px;
+    text-align: center;
+    padding-top: 20px;
+    border-radius: 2px;
+    /* box-shadow:  0 0 0.2em rgb(175, 15, 15); */
+}
+
+.text-menu {
+    position: absolute;
+    text-align: center;
+    padding-top: 20px;
+    margin-top: 20px;
+    background-color: rgb(233, 224, 224);
+    border: 1px solid rgb(204, 182, 182);
+    width: 52vw;
+    height: 70px;
+    margin-left: 8%;
+    border-radius: 2px;
+}
+
+.text-menu select{
+    margin-right: 30px;
+    margin-bottom: 5%;
+    /* min-width: 144px; */
+    width: 180px;
+    text-align: center;
+}
+
+.text-menu button{
+    width: 64px;
+} 
+
+
+@media (max-width: 1040px) and (min-width: 901px){
+    .text-menu {
+        margin-left: 8%;
+        width: 52vw;
+        /* background-color: rgb(0, 255, 0); */
+    }
+    .text-menu select{
+        width: 18vw;
+        margin-bottom: 0px;
+        margin-left: 0%;
+    }
+}
+
+@media (max-width: 900px) and (min-width: 705px){
+    .form-menu {
+        height: 275px;
+        margin-top: -324px;
+    }
+    .text-menu {
+        height: 57%;
+        margin-left: 8%;
+        width: 50vw;
+        margin-top: 32px;
+        /* background-color: rgb(68, 0, 255); */
+    }
+    .text-menu select{
+        width: 25vw;
+        margin-bottom: 17px;
+        margin-left: 25%;
+        display: flex;
+    }
+}
+
+@media (max-width: 704px) and (min-width: 379px){
+    .form-menu {
+        margin-top: -320px;
+        height: 270px;
+    }
+    .form-menu h2{
+        padding-left: 2%;
+        padding-right: 2%;
+        margin-left: 7%;
+        width: 50vw;
+        /* background-color: red; */
+    }
+    .text-menu {
+        height: 53%;
+        margin-left: 14%;
+        width: 43vw;
+        margin-top: 10px;
+    }
+    .text-menu select{
+        width: 35vw;
+        margin-left: 9%;
+    }
+}
+
+/*----------------------*/
+
+.fondo2{
+    width: 100%;
+    height: 80%; 
+}
+
+/* seccion 2 */
+
+.tituloSecc2{
+    margin-left: 70px;
+    margin-top: 40px;
+}
+
+
+/* seccion 3  */
+
+.tituloSecc3{
+    margin-left: 70px;
+}
+

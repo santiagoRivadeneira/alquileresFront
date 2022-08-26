@@ -1,0 +1,38 @@
+<div class="row rowDestacados">
+    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4" (click)="enviarInmueble(1)">
+        <div class="columna">
+            <img src="{{imagen1}}">
+            <p>${{propiedad.precio}}</p>
+            <p>{{propiedad.direccion}}</p>
+            <div class="descripcionAnuncio">
+                <p>Numero de ambientes: {{propiedad.ambientes}}</p>
+                <p>{{propiedad.localidad}}</p>
+                <button>VER MAS</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4" (click)="enviarInmueble(2)">
+        <div class="columna">
+            <img src="{{imagen2}}">
+            <p>${{propiedad2.precio}}</p>
+            <p>{{propiedad2.direccion}}</p>
+            <div class="descripcionAnuncio">
+                <p>Numero de ambientes: {{propiedad2.ambientes}}</p>
+                <p>{{propiedad2.localidad}}</p>
+                <button>VER MAS</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4" (click)="enviarInmueble(3)">
+        <div class="columna">
+            <img src="{{imagen3}}">
+            <p>${{propiedad3.precio}}</p>
+            <p>{{propiedad3.direccion}}</p>
+            <div class="descripcionAnuncio">
+                <p>Numero de ambientes: {{propiedad3.ambientes}}</p>
+                <p>{{propiedad3.localidad}}</p>
+                <button>VER MAS</button>
+            </div>
+        </div>
+    </div>
+</div>
