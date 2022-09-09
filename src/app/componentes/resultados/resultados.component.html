@@ -8,16 +8,18 @@
             <div *ngIf="srv2.ocultarValores">
                 <p>Todos los inmuebles</p>
                 <div *ngFor="let dato of datos">
-                    <div class="resultados">
+                    <div class="resultados" data-bs-toggle="modal" data-bs-target="#MODAL2">
                         <app-inmuebles></app-inmuebles>
                     </div>
                 </div>
             </div>
 
+
+
             <!-- filtros del 1er buscador -->
             <div *ngIf="!srv2.ocultarValores && srv2.aux">
                 <p>{{respuesta}} {{otraRespuesta}}</p><!-- respuesta de home-->
-                <div class="resultados">
+                <div class="resultados" data-bs-toggle="modal" data-bs-target="#MODAL">
                     <app-inmuebles></app-inmuebles>
                 </div>
             </div>
@@ -27,7 +29,7 @@
             <!-- <div> -->
                 <p>{{srv2.resultadoBusqueda}}</p><!-- respuesta de barra superior, servicio-->
                 <div *ngFor="let dato of datos">
-                    <div class="resultados">
+                    <div class="resultados" data-bs-toggle="modal" data-bs-target="#MODAL">
                         <app-inmuebles></app-inmuebles>
                     </div>
                     <!-- <div class="row resultados">
@@ -43,6 +45,25 @@
                     </div> -->
                 </div>
             </div>
+
+
+
+            <!-- VENTANA MODAL -->
+
+            
+              
+              <div class="modal fade" id="MODAL2" tabindex="-1" role="dialog" aria-labelledby="MODAL2Label">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-body">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Volver</button>
+                      <app-inmuebles></app-inmuebles>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            <!-- CIERRA VENTANA MODAL -->
         </div>
     </div>
 </div>

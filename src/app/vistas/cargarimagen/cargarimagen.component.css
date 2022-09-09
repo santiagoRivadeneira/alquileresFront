@@ -1,0 +1,32 @@
+.containerImg{
+    margin-top: 10px;
+    margin-left: -30px;
+    width: 150px;
+    height: 100px;
+    border: 1px solid rgb(204, 182, 182);
+    overflow: auto;
+}
+
+img{
+    margin-left: 30px;
+    margin-top: 20px;
+    width: 70px;
+    height: 50px;
+    overflow: auto;
+}
+
+.subir{
+    width: 90px;
+}
+
+.subir p{
+    width: 90px;
+    height: 27px;
+    padding-left: 10px;
+    margin-top: 20px;
+    border: 1px solid rgb(204, 182, 182);
+}
+
+.subir p:hover{
+    cursor: pointer;
+}

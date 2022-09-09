@@ -18,6 +18,6 @@ export class PropiedadService {
     this.ambientes = 0;
     this.localidad = "";
     this.idPropiedad = 0;
-    this.imagen = "";
+    this.imagen = "https://imgar.zonapropcdn.com/avisos/1/00/48/23/19/63/720x532/1809087476.jpg";
   }
 }

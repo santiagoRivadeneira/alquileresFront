@@ -1,4 +1,44 @@
+h1{
+    margin-bottom: 40px;
+}
+
 .row{
     max-width: 50%;
     margin-left: 23%;
+}
+
+input{
+    display: block;
+    margin-bottom: 10px;
+}
+button{
+    margin-top: 10px;
+    margin-left: 23%;
+}
+.form-container .btn-send:hover:not([disabled]){
+    background-color: rgb(47, 0, 255);
+}
+
+
+.alert-danger{
+    width: 270px;
+    max-height: 2px;
+}
+
+.container-error-message1{
+    width: 240px;
+    font-size: small;
+    margin-top: -10px;
+}
+
+.container-error-message1 p{
+    margin-top: -10px;
+    width: 200px;
+    font-size: small;
+}
+
+.container-error-message2 p{
+    margin-top: -10px;
+    width: 200px;
+    font-size: small;
 }

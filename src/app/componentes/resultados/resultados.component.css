@@ -22,6 +22,7 @@
     float: left;
     margin-bottom: 4%;
     margin-top: 2%;
+    cursor: pointer;
 }
 
 .carousel{
@@ -43,3 +44,33 @@
     text-align: center;
     margin-bottom: 30px;
 }
+
+
+
+
+
+
+/*---- ventana modal ----*/
+
+.modal{
+    margin-top: 4%;
+    transition: all 0.6s;
+}
+
+.modal-body{
+    height: 500px;
+    margin-left: 24%;
+    margin-bottom: 2%;
+}
+
+.modal-body button{ /* boton 'atras' */
+    margin-left: 24%;
+    margin-top: 1%;
+}
+
+.modal-dialog{
+    min-width: 100%;
+    min-width: 100%;
+}
+
+/*---------------*/

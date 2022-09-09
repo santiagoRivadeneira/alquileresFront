@@ -17,10 +17,21 @@ export class AutenticacionService {
   ambientes: number;
   aux: boolean=false;
 
+  validacionLogin: boolean = false;
+
   constructor(private router: Router) { 
     this.localidad = 'Avellaneda';
     this.propiedad = 'Casa';
     this.ambientes = 2;
+  }
+
+  validarLogin(){
+    if(this.validacionLogin){
+      console.log("estoy logeado");
+    return true;}
+    else
+    console.log("NO estoy logeado");
+    return false;
   }
 
 }

@@ -18,7 +18,6 @@ export class InteresComponent implements OnInit {
   imagen2: string ="https://cdn.pixabay.com/photo/2015/10/20/18/57/furniture-998265_960_720.jpg";
   imagen3: string ="https://imgar.zonapropcdn.com/avisos/1/00/48/23/19/63/720x532/1809087476.jpg";
   
-  
   constructor(public router: Router, public srvProp : PropiedadService) { 
     this.propiedad.precio = 320000;
     this.propiedad.direccion = "Av. Cabildo 23";
@@ -43,18 +42,21 @@ export class InteresComponent implements OnInit {
         this.srvProp.direccion = this.propiedad.direccion;
         this.srvProp.ambientes = this.propiedad.ambientes;
         this.srvProp.localidad = this.propiedad.localidad;
+        this.srvProp.imagen = this.imagen1;
         break;
       case 2:
         this.srvProp.precio = this.propiedad2.precio;
         this.srvProp.direccion = this.propiedad2.direccion;
         this.srvProp.ambientes = this.propiedad2.ambientes;
         this.srvProp.localidad = this.propiedad2.localidad;
+        this.srvProp.imagen = this.imagen2;
         break;
       case 3:
         this.srvProp.precio = this.propiedad3.precio;
         this.srvProp.direccion = this.propiedad3.direccion;
         this.srvProp.ambientes = this.propiedad3.ambientes;
         this.srvProp.localidad = this.propiedad3.localidad;
+        this.srvProp.imagen = this.imagen3;
         break;
     }
     this.srvProp.idPropiedad = 1;

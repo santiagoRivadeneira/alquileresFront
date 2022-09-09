@@ -3,22 +3,30 @@
         <div class="card">
             <div class="card-body">
                 <h1 class="text-center">Registro de cuenta</h1>
-                <form>
-                    <div class="form-group">
-                        <label for="email">Ingresa tu email</label>
-                        <input type="email" class="form-control" placeholder="Email">
-                    </div>
-                    <br>
-                    <div class="form-group">
-                        <label for="password">Ingresa tu contraseña</label>
-                        <input type="password" class="form-control" placeholder="Contraseña">
-                    </div>
-                    <br>
-                    <button>Registrar</button>
-                </form>
-                <!-- <div class="form-group mt-3">
-                    <p>Ya tenes una cuenta? <a routerLink="/login">Logeate</a></p>
-                </div> -->
+                <div class="form-container">
+                    <form [formGroup]="contactForm" (ngSubmit)="onSaveForm()" class="forasd">
+                        <input type="text" formControlName="name" placeholder="tu nombre">
+                        <div class="alert alert-danger" *ngIf="name.invalid && (name.dirty || name.touched)">
+                            <div class="container-error-message1" *ngIf="name?.errors?.['required']">
+                                <small>El nombre es obligatorio</small>
+                            </div>
+                            <div class="container-error-message1" *ngIf="name?.errors?.['minlength']">
+                                <small>El nombre debe ser valido</small>
+                            </div>
+                        </div>
+                        <input type="text" formControlName="email" placeholder="tu email">
+                        <div class="alert alert-danger" *ngIf="email.invalid && (email.dirty || email.touched)">
+                            <div class="container-error-message2" *ngIf="email?.errors?.['required']">
+                                <p>El email es obligatorio</p>
+                            </div>
+                            <div class="container-error-message2" *ngIf="email?.errors?.['minlength'] ||
+                            (email.dirty || email.touched) && email.invalid && email?.errors?.['pattern']">
+                                <p>El email debe ser valido</p>
+                            </div>
+                        </div>
+                        <button type="submit" [disabled]="!contactForm.valid">enviar</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>

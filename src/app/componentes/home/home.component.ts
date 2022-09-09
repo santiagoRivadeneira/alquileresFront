@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
+import { CargarimagenesService } from 'src/app/servicios/cargarimagenes.service';
 import { ServicioService } from 'src/app/servicios/servicio.service';
 
 @Component({
@@ -46,7 +47,7 @@ export class HomeComponent implements OnInit {
 
   
   constructor(public srv: AutenticacionService, private router: Router,
-    public srv2: ServicioService) { 
+    public srv2: ServicioService, public srvImg: CargarimagenesService) { 
     this.datos1 = [1,2,3];
     this.datos2 = ["departamento", "casa"];
     this.datos3 = ["Avellaneda", "Lanus", "Lomas de zamora","Consti"];

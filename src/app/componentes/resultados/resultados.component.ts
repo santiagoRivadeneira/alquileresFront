@@ -19,7 +19,7 @@ export class ResultadosComponent implements OnInit {
   images = [
     {
       imageSrc:
-          'https://www.infobae.com/new-resizer/bwmmjVLtgb0_t5PCIwSo_aFQre0=/cloudfront-us-east-1.images.arcpublishing.com/infobae/JE6PZ22NAZFC7AKSUBB4MYR64Q.png',
+          'https://imgar.zonapropcdn.com/avisos/1/00/48/23/19/63/720x532/1809087476.jpg',
           imageAlt: 'img1',
     },
     {
@@ -40,7 +40,7 @@ export class ResultadosComponent implements OnInit {
   ]
 
   constructor(public srv: AutenticacionService, public srv2: ServicioService) {
-    this.datos = ["normal", "1w"];
+    this.datos = ["normal"];
   }
 
   mostrarValorIngresado() {
@@ -69,9 +69,6 @@ export class ResultadosComponent implements OnInit {
     this.localidad = this.srv.localidad;
     this.propiedad = this.srv.propiedad;}
   }
-
-  
-
 
   ngOnInit(): void { 
     this.mostrarValorIngresado();

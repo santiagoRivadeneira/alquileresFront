@@ -1,0 +1,34 @@
+/* .row{
+    background-color: blue;
+} */
+form{
+    margin-top: 10px;
+    width: 600px;
+    height: 240px;
+    border: 1px solid rgb(204, 182, 182);
+}
+.columna1{
+    width: 200px;
+    height: 190px;
+    margin-top: 10px;
+    margin-left: 70px;
+    border: 1px solid rgb(204, 182, 182);
+    display: inline-block;
+}
+
+.columna1 input{
+    margin-left: 20px;
+    margin-top: 10px;
+    width: 140px;
+    border: 1px solid rgb(204, 182, 182);
+}
+
+.columna1 button{
+    margin-top: 10px;
+    margin-left: 90px;
+}
+
+.columna2{
+    display: inline-block;
+    margin-left: 70px;
+}

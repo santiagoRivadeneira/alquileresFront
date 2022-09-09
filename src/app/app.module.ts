@@ -18,6 +18,9 @@ import { UsuariosComponent } from './vistas/usuarios/usuarios.component';
 import { DestacadosComponent } from './vistas/destacados/destacados.component';
 import { InteresComponent } from './vistas/interes/interes.component';
 import { FooterComponent } from './vistas/footer/footer.component';
+import { CargarimagenComponent } from './vistas/cargarimagen/cargarimagen.component';
+import { GenerarpublicacionComponent } from './vistas/generarpublicacion/generarpublicacion.component';
+import { RecientesComponent } from './vistas/recientes/recientes.component';
 
 @NgModule({
   declarations: [
@@ -36,11 +39,15 @@ import { FooterComponent } from './vistas/footer/footer.component';
     DestacadosComponent,
     InteresComponent,
     FooterComponent,
+    CargarimagenComponent,
+    GenerarpublicacionComponent,
+    RecientesComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

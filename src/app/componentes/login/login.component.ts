@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
 import { LoginService } from 'src/app/servicios/login.service';
@@ -10,60 +11,33 @@ import { LoginService } from 'src/app/servicios/login.service';
 })
 export class LoginComponent implements OnInit {
 
-  email: string = "";
-  contrasena: string = "";
-  respuesta: string = "";
-  aux: boolean = false;
+  Email: string = "";
+  emailPattern: any = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+  contactForm = new FormGroup({
+    email: new FormControl('', [Validators.required, Validators.minLength(5), Validators.pattern(this.emailPattern)]),
+    contrasena: new FormControl ('', [Validators.required, Validators.minLength(5)])
+  })
 
   constructor(public srv: AutenticacionService, public srvLogin: LoginService, private router: Router) { }
 
-  ngOnInit(): void {
-    this.email=this.srv.nombre;
-    this.contrasena=this.srv.contraseña;
+  onResetForm(){
+    this.contactForm.reset();
+   }
+
+   onSaveForm(){
+    this.srvLogin.email = this.Email; //se envia el nombre de usuario
+    this.onResetForm();
   }
+   
+   get contrasena() { return this.contactForm.get('contrasena'); }
+   get email() { return this.contactForm.get('email'); }
 
-  enviar(){
-    // this.srv.modal = true;
-    if(this.email == "" && this.contrasena == ""){
-      this.respuesta="Por favor, ingrese los datos";
-    }else
-    
-    if(this.email == "" || this.contrasena == ""){
-      this.respuesta="Por favor, ingrese los datos restantes";
-    }else
-    if(this.email != "" && this.contrasena != ""){
-      
-      if(this.contrasena.length<6){
-        this.respuesta="la contraseña debe ser mas larga";
-      }else
-      if(!this.email.match(/^[a-z]+[a-z0-9._-]+@[a-z]+\.[a-z.]{2,5}$/)){ // aa@a.co por ejemplo
-        this.respuesta = "ingrese un email valido";
-      }else
-      {
-        this.respuesta = "";
-        this.aux = true;
+   mostrarError(){
+    console.log("cerrado");
+   }
+   
+  ngOnInit(): void {}
 
-        // ----------APLICAR GUARDS PARA BOTON---------------->>>>>>>>>>>
-
-
-
-
-
-
-        
-        
-        // this.srv.modal = false;
-        // this.router.navigate(["/home"]);
-        // this.srv.cambioModal=true;
-        // this.srv.cerrarModal();
-        
-      }
-    }
-  }
-
-  cerrarModal(){
-    this.srvLogin.email = this.email; //se envia el nombre de usuario
-    this.aux = false;
-  }
-
+ 
 }

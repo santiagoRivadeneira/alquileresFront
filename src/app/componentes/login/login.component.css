@@ -1,14 +1,14 @@
-.row{
+/* .row{
     max-width: 50%;
     margin-left: 23%;
     margin-top: -50px;
-}
+} */
 
 /* .card-body{
     background-color: red;
 } */
 
-.form-group1{
+/* .form-group1{
     height: 30px;
 }
 
@@ -16,14 +16,65 @@
     color: rgb(64, 127, 199);
     font-weight: bold;
     text-decoration: none;
-}
+} */
 
 /*botones que validan el login*/
 
-.btnRojo{
+/* .btnRojo{
     background-color: rgb(205, 210, 212);
 }
 
 .btnAzul{
     background-color: rgb(194, 173, 173);
+} */
+
+
+
+h1{
+    margin-bottom: 40px;
+}
+
+.row{
+    max-width: 50%;
+    margin-left: 23%;
+}
+
+input{
+    display: block;
+    margin-bottom: 10px;
+}
+button{
+    margin-top: 10px;
+    margin-left: 23%;
+}
+
+/* .form-container .btn-send:hover:not([disabled]){
+    cursor: pointer;
+} */
+
+.btn-send{
+    cursor: pointer;
+}
+
+.alert-danger{
+    width: 270px;
+    max-height: 2px;
+}
+
+.container-error-message1{
+    width: 240px;
+    font-size: small;
+    margin-top: -10px;
+}
+
+.container-error-message1 p{
+    margin-top: -10px;
+    width: 200px;
+    font-size: small;
+}
+
+.container-error-message2 p{
+    margin-top: -10px;
+    width: 200px;
+    font-size: small;
 }

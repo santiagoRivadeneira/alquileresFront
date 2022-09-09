@@ -20,6 +20,11 @@ export class NavbarComponent implements OnInit {
 
     this.router.navigate(["/home"]);
   }
+
+  volver(){
+    // document.getElementById("").set 
+    //cerrar form
+  }
  
   ngOnInit(): void {
     this.srv.modal = true;
