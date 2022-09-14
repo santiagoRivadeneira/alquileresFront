@@ -18,13 +18,13 @@
                             </div>
                         </div>
 
-                        <input type="text" formControlName="contrasena" placeholder="tu contrasena">
+                        <input type="password" formControlName="contrasena" placeholder="tu contrasena">
                         <div class="alert alert-danger" *ngIf="contrasena.invalid && (contrasena.dirty || contrasena.touched)">
                             <div class="container-error-message1" *ngIf="contrasena?.errors?.['required']">
-                                <small>La contrasena es obligatorio</small>
+                                <small>La contrasena es obligatoria</small>
                             </div>
                             <div class="container-error-message1" *ngIf="contrasena?.errors?.['minlength']">
-                                <small>La contrasena debe ser valido</small>
+                                <small>La contrasena debe ser valida</small>
                             </div>
                         </div>
 

@@ -1,5 +1,16 @@
-<div class="containerImg">
-    <div *ngFor="let url of cargarImg.urls">
-      <img [src]="url" alt="">
+<div class="row rowInteres">
+    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+        <div class="columna">
+            <!-- valores ingresados -->
+            <div>
+              
+              <div *ngFor="let item of cargarImg.objetoPublicacionService"> <!-- datos del usuario -->
+                  <p>valor: {{item}}</p>
+              </div>
+              <div *ngFor="let url of cargarImg.urls"> <!-- imagenes -->
+                <img [src]="url" alt="">
+              </div>
+            </div>
+        </div>
     </div>
 </div>

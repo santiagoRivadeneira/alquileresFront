@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { CargarimagenesService } from 'src/app/servicios/cargarimagenes.service';
 
 @Component({
   selector: 'app-generarpublicacion',
@@ -9,28 +9,19 @@ import { Router } from '@angular/router';
 })
 export class GenerarpublicacionComponent implements OnInit {
 
-  contactForm = new FormGroup({
-    direccion: new FormControl('', [Validators.required]),
-    ambientes: new FormControl('', [Validators.required]),
-    localidad: new FormControl ('', [Validators.required])
-  })
-  
-  constructor(private router: Router) { }
+  valor1: string = "";
+  valor2: string = "";
+  aux: boolean = false;
 
-  onResetForm(){
-    this.contactForm.reset();
-   }
 
-   publicar(){
-    
-    this.router.navigate[("/home")];
-    console.log("enviado");
-    // this.onResetForm();
-   }
-   
-   get direccion() { return this.contactForm.get('direccion'); }
-   get ambientes() { return this.contactForm.get('ambientes'); }
-   get localidad() { return this.contactForm.get('localidad'); }
+  constructor(public cargarImg: CargarimagenesService, public router: Router) {}
+
+  enviar(){
+    this.cargarImg.objetoPublicacionService.push(this.valor1, this.valor2);
+    this.aux = true;
+    this.cargarImg.aux = true;
+    this.router.navigate(["/home"]);
+  }
 
   ngOnInit(): void {
   }

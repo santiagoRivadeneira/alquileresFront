@@ -8,9 +8,10 @@ import { CargarimagenesService } from 'src/app/servicios/cargarimagenes.service'
 })
 export class RecientesComponent implements OnInit {
 
-  constructor(public cargarImg: CargarimagenesService) { }
 
-  ngOnInit(): void {
-  }
+  constructor(public cargarImg: CargarimagenesService) {}
+
+
+  ngOnInit(): void {}
 
 }

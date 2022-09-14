@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root'
@@ -7,6 +8,17 @@ export class CargarimagenesService {
 
   urls: any = [];
   aux: boolean = false;
+  direccion: string ="";
+  ambientes: number;
+  localidad: string = "";
+
+
+  valor1: string = "";
+  valor2: string = "";
+
+  objetoPublicacionService: any = [];
+
+  myForm: FormGroup;
 
   constructor() { }
 

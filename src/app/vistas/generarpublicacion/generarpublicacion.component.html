@@ -1,69 +1,21 @@
-<div class="container">
-    <div class="row">
-        <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
-            <div class="form-container">
-                <form [formGroup]="contactForm" (ngSubmit)="publicar()">
-                    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4 columna1">
-                        <input type="text" formControlName="direccion" placeholder="Direccion">
-                        <input type="text" formControlName="ambientes" placeholder="Ambientes">
-                        <input type="text" formControlName="localidad" placeholder="Localidad">
-                        <button type="submit" [disabled]="!contactForm.valid">enviar</button>
-                    </div>
-                    
-                    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4 columna2">
-                        <app-cargarimagen></app-cargarimagen>
-                    </div>
-                </form>
-            </div>
+<form>
+    <input type="text" placeholder="valor1" [(ngModel)]="valor1" [ngModelOptions]="{standalone: true}"><br><br>
+    <input type="text" placeholder="valor2" [(ngModel)]="valor2" [ngModelOptions]="{standalone: true}"><br><br>
+
+    <!-- imagen -->
+
+    <div>
+        <div *ngFor="let url of cargarImg.urls">
+        <img [src]="url" alt="">
         </div>
     </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <div class="container">
-    <div class="row">
-        <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
-            <div class="columna1">
-                <form [formGroup]="contactForm" (ngSubmit)="publicar()">
-                    <input type="text" formControlName="direccion" placeholder="Direccion">
-                    <input type="text" formControlName="ambientes" placeholder="Ambientes">
-                    <input type="text" formControlName="localidad" placeholder="Localidad">
-                    <button type="submit" [disabled]="!contactForm.valid">enviar</button>
-                </form>
-            </div>
-        </div>
-        <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
-            <div class="columna2">
-                <app-cargarimagen></app-cargarimagen>
-            </div>
-        </div>
+        
+    <div class="subir">
+        <label for="file-upload">
+        <p>Examinar</p>
+        </label>
+        <input (change)="cargarImg.selecImg($event)" type="file" id="file-upload" style='display: none;' multiple>
     </div>
-</div> -->
+
+    <button (click)="enviar()">Enviar</button>
+</form>
