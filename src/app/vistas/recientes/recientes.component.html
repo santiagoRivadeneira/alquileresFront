@@ -3,10 +3,14 @@
         <div class="columna">
             <!-- valores ingresados -->
             <div>
-              
-              <div *ngFor="let item of cargarImg.objetoPublicacionService"> <!-- datos del usuario -->
+              <div class="descripcionAnuncio" *ngFor="let item of cargarImg.objetoPublicacionService"> <!-- datos del usuario -->
+                  <p>Numero de ambientes:</p>
                   <p>valor: {{item}}</p>
+                  <p>Localidad</p>
+                  <button>VER MAS</button>
               </div>
+              
+            
               <div *ngFor="let url of cargarImg.urls"> <!-- imagenes -->
                 <img [src]="url" alt="">
               </div>
