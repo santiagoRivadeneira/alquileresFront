@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { CargarimagenesService } from 'src/app/servicios/cargarimagenes.service';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
+import { LoginService } from 'src/app/servicios/login.service';
+import { UserService } from 'src/app/servicios/user.service';
+import axios from "axios";
 
 @Component({
   selector: 'app-recientes',
@@ -8,10 +13,21 @@ import { CargarimagenesService } from 'src/app/servicios/cargarimagenes.service'
 })
 export class RecientesComponent implements OnInit {
 
+  public publicaciones  = [];
+  correo: string = "";
+  contrasena: string = "";
 
-  constructor(public cargarImg: CargarimagenesService) {}
+  constructor() {}
+
+  ngOnInit(): void {
+
+    
+  }
 
 
-  ngOnInit(): void {}
 
+
+
+   
+ 
 }

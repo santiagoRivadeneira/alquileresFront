@@ -33,11 +33,27 @@
         </div>
     </div>
     <br>
+
     <!-- seccion 2 'destacados' -->
-    <div *ngIf="srvImg.aux">
+    <div  >
         <h3 class="tituloSecc2">Recientes</h3>
-        <app-recientes></app-recientes>
+        <div class="row rowInteres">
+            <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                <div class="columna">
+                    <div>
+                      <div class="descripcionAnuncio" *ngFor="let publi of publicaciones">
+                        <div class="descripcionAnuncio" *ngFor="let p of publi">
+                            <p>Numero de ambientes: {{p.numeroAmb}}  </p>
+                            <p>valor: {{p.precio}}</p>
+                            <p>Localidad: {{p.localidad}}</p>
+                            <button>VER MAS</button>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
     </div>
+
     <!-- seccion 2 'destacados' -->
     <h3 class="tituloSecc2">Los mas destacados</h3>
     <app-destacados></app-destacados>

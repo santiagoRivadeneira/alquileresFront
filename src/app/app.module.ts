@@ -22,6 +22,12 @@ import { CargarimagenComponent } from './vistas/cargarimagen/cargarimagen.compon
 import { GenerarpublicacionComponent } from './vistas/generarpublicacion/generarpublicacion.component';
 import { RecientesComponent } from './vistas/recientes/recientes.component';
 
+
+import { AuthGuard } from "./auth.guard"
+
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +55,9 @@ import { RecientesComponent } from './vistas/recientes/recientes.component';
     FormsModule,
     ReactiveFormsModule.withConfig({warnOnNgModelWithFormControl: 'never'})
   ],
-  providers: [],
+  providers: [
+    AuthGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

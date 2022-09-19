@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { UserService } from 'src/app/servicios/user.service';
 import axios from "axios";
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/servicios/auth.service';
 
 @Component({
   selector: 'app-registro',
@@ -21,7 +23,7 @@ export class RegistroComponent implements OnInit {
   contrasena: string = "";
   usuarios= [];
 
-  constructor(public userService: UserService) {}
+  constructor(public userService: UserService, public router: Router, private authService: AuthService) {}
 
   //  onResetForm(){
   //   this.contactForm.reset();
@@ -37,12 +39,25 @@ export class RegistroComponent implements OnInit {
   //  get email() { return this.contactForm.get('email'); }
 
    onSubmit = async() => {
-    this.userService.CreateUser(this.correo, this.contrasena)
+
+      this.authService.CreateUser(this.correo, this.contrasena)
+
   }
 
 
-//obtener usuarios
 
+
+
+
+
+
+
+
+
+
+  
+//obtener usuarios
+/*
   getUsers = async() => {
 
 
@@ -61,7 +76,9 @@ export class RegistroComponent implements OnInit {
     });
 
   }
-
-  ngOnInit(): void {}
+*/
+  ngOnInit(): void {
+    
+  }
 
 }

@@ -27,7 +27,11 @@
                 <br>
                 <div>
 
-                    <input type="submit" class="btn btn-primary mt-3 justify-content-center" value=" Registrarse" (click)="onSubmit()">
+                    <div  *ngFor="let publi of usuarios">
+                        <p>{{publi.email}}</p>
+                    </div>
+                
+                    <input type="submit" class="btn btn-primary mt-3 justify-content-center" value="Iniciar Sesion" (click)="onSubmit()">
                     <!--  <button id="btnRojo" class="btnRojo" *ngIf="!aux" (click)="enviar()">Continuar</button>-->
                      <!-- <button class="btnAzul" *ngIf="aux" (click)="cerrarModal()" data-bs-dismiss="modal">Ingresar</button>-->
                     <!-- <button data-bs-dismiss="modal" (click)="enviar()">Continuar</button> -->

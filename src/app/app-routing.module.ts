@@ -10,6 +10,8 @@ import { ErrorComponent } from './vistas/error/error.component';
 import { GenerarpublicacionComponent } from './vistas/generarpublicacion/generarpublicacion.component';
 import { InmueblesComponent } from './vistas/inmuebles/inmuebles.component';
 import { UsuariosComponent } from './vistas/usuarios/usuarios.component';
+import { AuthGuard } from "./auth.guard"
+
 
 
 const routes: Routes = [
@@ -19,10 +21,10 @@ const routes: Routes = [
   {path:"login", component: LoginComponent},
   {path:"ubicacion", component: UbicacionComponent},
   {path:"busqueda", component: BusquedaComponent},
-  {path:"resultados", component: ResultadosComponent},
+  {path:"resultados", component: ResultadosComponent, canActivate: [AuthGuard]},
   {path:"error", component: ErrorComponent},
   {path:"miperfil", component: UsuariosComponent},
-  {path:"inmuebles", component: InmueblesComponent},
+  {path:"inmuebles", component: InmueblesComponent, canActivate: [AuthGuard]},
   {path:"publicar", component: GenerarpublicacionComponent},
   {path: "**", redirectTo: "error", pathMatch: 'full'} //tiene que ir a pantalla error
 ];

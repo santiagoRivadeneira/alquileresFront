@@ -1,21 +1,102 @@
-<form>
-    <input type="text" placeholder="valor1" [(ngModel)]="valor1" [ngModelOptions]="{standalone: true}"><br><br>
-    <input type="text" placeholder="valor2" [(ngModel)]="valor2" [ngModelOptions]="{standalone: true}"><br><br>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+            <!-- 
+                precio
+                direccion
+                numero de ambientes
+                localidad
+                imagenes    
+            -->
 
-    <!-- imagen -->
+            <!--
+            <input type="text" placeholder="Precio" [(ngModel)]="precio" [ngModelOptions]="{standalone: true}"><br><br>
+            <input type="text" placeholder="Direccion" [(ngModel)]="direccion" [ngModelOptions]="{standalone: true}"><br><br>
+            <input type="text" placeholder="Numero de ambientes" [(ngModel)]="ambientes" [ngModelOptions]="{standalone: true}"><br><br>
+            <input type="text" placeholder="Localidad" [(ngModel)]="localidad" [ngModelOptions]="{standalone: true}"><br><br>
+            -->
+            
+            <div class="form-group">
+                <label>Ingresa tu Precio</label>
+                <input 
+                    [(ngModel)]="precio"
+                    type="string" 
+                    class="form-control" 
+                    id="formGroupExampleInput" 
+                    placeholder="ingrese Precio"
+                />
+                <label>Ingresa tu direccion</label>
+                <input 
+                    type="string" 
+                    class="form-control" 
+                    id="formGroupExampleInput2" 
+                    placeholder="Ingrese Direccion"
+                    [(ngModel)]="direccion"
+                />
+                <label>Numero de ambientes</label>
+                <input 
+                    type="string" 
+                    class="form-control" 
+                    id="formGroupExampleInput2" 
+                    placeholder="Ingrese Cantidad de ambientes"
+                    [(ngModel)]="numeroAmb"
+                />
+                <label>Ingresa tu Localidad</label>
+                <input 
+                    type="string" 
+                    class="form-control" 
+                    id="formGroupExampleInput2" 
+                    placeholder="Ingrese Localidad"
+                    [(ngModel)]="localidad"
+                />
+            </div>
 
-    <div>
-        <div *ngFor="let url of cargarImg.urls">
-        <img [src]="url" alt="">
-        </div>
-    </div>
+
+
+            <input type="submit" class="btn btn-primary mt-3 justify-content-center" value=" Crear Publicacion" (click)="onSubmit()">
+
+
+            <!-- imagen 
+            <div>
+                <div *ngFor="let url of cargarImg.urls">
+                <img [src]="url" alt="">
+                </div>
+            </div>
+                
+            <div class="subir">
+                <label for="file-upload">
+                <p>Examinar</p>
+                </label>
+                <input (change)="cargarImg.selecImg($event)" type="file" id="file-upload" style='display: none;' multiple>
+            </div>
         
-    <div class="subir">
-        <label for="file-upload">
-        <p>Examinar</p>
-        </label>
-        <input (change)="cargarImg.selecImg($event)" type="file" id="file-upload" style='display: none;' multiple>
-    </div>
+            <button (click)="enviar()">Enviar</button>
+        </form>
+    -->
+        <!-- imagen -->
+    <!--
+        SUBIR UNA IMAGEN DE MOMENTO QUEDA POR VER
+        <div>
+            <div *ngFor="let url of cargarImg.urls">
+            <img [src]="url" alt="">
+            </div>
+        </div>
+            
+        <div class="subir">
+            <label for="file-upload">
+            <p>Examinar</p>
+            </label>
+            <input (change)="cargarImg.selecImg($event)" type="file" id="file-upload" style='display: none;' multiple>
+        </div>
+    -->
 
-    <button (click)="enviar()">Enviar</button>
-</form>
+    
+        
+</body>
+</html>

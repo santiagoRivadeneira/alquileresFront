@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import axios from 'axios';
 import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
 import { CargarimagenesService } from 'src/app/servicios/cargarimagenes.service';
 import { ServicioService } from 'src/app/servicios/servicio.service';
@@ -21,6 +22,9 @@ export class HomeComponent implements OnInit {
   seleccionLoc: string = '';
   seleccionProp: string = '';
   seleccionAmb: number = 0;
+
+
+  public publicaciones = []
   
   images = [
     {
@@ -116,8 +120,30 @@ export class HomeComponent implements OnInit {
     return this.seleccionAmb;
   }
 
+
+
+
+
+
   ngOnInit(): void {
     this.srv.modal = true;
+
+
+   axios.get('http://localhost:8080/api/publicaciones/obtener')
+   .then((response) => {
+     this.publicaciones.push(response.data)
+     console.log(this.publicaciones)
+
+   }, (error) => {
+     console.log(error);
+   });
+
+   
+   
   }
   
+
+
+
+
 }

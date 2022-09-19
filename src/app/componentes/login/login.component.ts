@@ -4,6 +4,11 @@ import { Router } from '@angular/router';
 import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
 import { LoginService } from 'src/app/servicios/login.service';
 import { UserService } from 'src/app/servicios/user.service';
+import {AuthService}  from "../../servicios/auth.service"
+
+
+
+
 import axios from "axios";
 
 @Component({
@@ -17,18 +22,20 @@ export class LoginComponent implements OnInit {
   correo: string = "";
   contrasena: string = "";
 
-  constructor(public srv: AutenticacionService, public srvLogin: LoginService, private router: Router, private userService: UserService) {}
+  constructor(public srv: AutenticacionService, public srvLogin: LoginService, private router: Router, private userService: UserService, private authService: AuthService) {}
 
   ngOnInit(): void {
 
 
-   axios.get('http://localhost:8080/api/usuarios/obtener')
+   axios.get('http://localhost:8080/api/publicaciones/obtener')
     .then((response) => {
       console.log(response.data);
       this.usuarios.push(response.data)
     }, (error) => {
       console.log(error);
     });
+    
+    
   }
 
 
@@ -37,8 +44,45 @@ export class LoginComponent implements OnInit {
 //funciona pero falta hacerlo mas generico  y separarlo en archivos(saber si el usuario es valido usar GET)
 
     onSubmit = async() => {
-      this.userService.Login(this.correo, this.contrasena)
+      this.authService.IniciarSesion(this.correo, this.contrasena)
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
