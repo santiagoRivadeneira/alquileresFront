@@ -76,33 +76,52 @@
         </div>
 
 
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <div class="navbar-nav ms-auto"> <!--cambia el navbar a la derecha-->
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
-                  <li class="nav-item" *ngIf="srvLogin.email == ''">
-                      <a 
-                      routerLinkActive="active"
-                      class="nav-link"
-                      aria-current="page"
-                      data-bs-toggle="collapse" 
-                      data-bs-target=".navbar-collapse.show"
-                      routerLink="/registro">Registrarse</a>      
-                    </li>
+      <ng-container *ngIf="!authService.CerrarSesion(); else CerrarSesion">
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="navbar-nav ms-auto"> <!--cambia el navbar a la derecha-->
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
                     <li class="nav-item" *ngIf="srvLogin.email == ''">
-                      <a 
-                      routerLinkActive="active"
-                      class="nav-link"
-                      aria-current="page"
-                      data-bs-toggle="collapse" 
-                      data-bs-target=".navbar-collapse.show"
-                      routerLink="/login">Iniciar sesion</a>      
-                    </li>
-              </ul>
+                        <a 
+                        routerLinkActive="active"
+                        class="nav-link"
+                        aria-current="page"
+                        data-bs-toggle="collapse" 
+                        data-bs-target=".navbar-collapse.show"
+                        routerLink="/registro">Registrarse</a>      
+                      </li>
+                      <li class="nav-item" *ngIf="srvLogin.email == ''">
+                        <a 
+                        routerLinkActive="active"
+                        class="nav-link"
+                        aria-current="page"
+                        data-bs-toggle="collapse" 
+                        data-bs-target=".navbar-collapse.show"
+                        routerLink="/login">Iniciar sesion</a>      
+                      </li>
+                </ul>
+            </div>
           </div>
+      </ng-container>
+      
+      <ng-template #CerrarSesion>
+          <div class="navbar-nav ms-auto"> <!--cambia el navbar a la derecha-->
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+                  <li class="nav-item">
+                    <a 
+                    (click)="authService.TerminarSesion()"
+                    routerLinkActive="active"
+                    class="nav-link"
+                    aria-current="page"
+                    data-bs-toggle="collapse" 
+                    data-bs-target=".navbar-collapse.show">
+                    Cerrar sesion</a>      
+                  </li>
+            </ul>
         </div>
+      </ng-template>
 
         
+
       </div>
     </div>
   </nav>

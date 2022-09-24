@@ -24,6 +24,8 @@ import { RecientesComponent } from './vistas/recientes/recientes.component';
 
 
 import { AuthGuard } from "./auth.guard"
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { TokenInterceptor } from './servicios/token-interceptor.service ';
 
 
 
@@ -56,7 +58,12 @@ import { AuthGuard } from "./auth.guard"
     ReactiveFormsModule.withConfig({warnOnNgModelWithFormControl: 'never'})
   ],
   providers: [
-    AuthGuard
+    AuthGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })

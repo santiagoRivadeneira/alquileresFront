@@ -50,12 +50,19 @@ export class HomeComponent implements OnInit {
   ]
 
   
-  constructor(public srv: AutenticacionService, private router: Router,
-    public srv2: ServicioService, public srvImg: CargarimagenesService) { 
-    this.datos1 = [1,2,3];
-    this.datos2 = ["departamento", "casa"];
-    this.datos3 = ["Avellaneda", "Lanus", "Lomas de zamora","Consti"];
-  }
+
+
+  constructor(
+    public srv: AutenticacionService, 
+    private router: Router,
+    public srv2: ServicioService, 
+    public srvImg: CargarimagenesService,
+    ) 
+    { 
+      this.datos1 = [1,2,3];
+      this.datos2 = ["departamento", "casa"];
+      this.datos3 = ["Avellaneda", "Lanus", "Lomas de zamora","Consti"];
+    }
 
 
 
@@ -109,6 +116,7 @@ export class HomeComponent implements OnInit {
     return this.seleccionProp;
   }
 
+
   capturarAmb() {
     this.seleccionAmb = this.ambientes;
     this.srv.ambientes = this.ambientes;
@@ -124,12 +132,14 @@ export class HomeComponent implements OnInit {
 
 
 
+  private token = localStorage.getItem("token");
+
 
   ngOnInit(): void {
     this.srv.modal = true;
 
 
-   axios.get('http://localhost:8080/api/publicaciones/obtener')
+   axios.get('http://localhost:8080/api/publicaciones/obtener', { headers: { Authorization: `Bearer ${this.token}` } })
    .then((response) => {
      this.publicaciones.push(response.data)
      console.log(this.publicaciones)

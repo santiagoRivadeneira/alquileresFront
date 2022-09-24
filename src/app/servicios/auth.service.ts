@@ -53,6 +53,18 @@ export class AuthService {
   }
 
 
+  ObtenerToken() {
+    return localStorage.getItem('token')
+  }
+
+
+  TerminarSesion(){
+    localStorage.removeItem('token');
+    this.router.navigate(['/login'])
+  }
+
+
+
 
 
 

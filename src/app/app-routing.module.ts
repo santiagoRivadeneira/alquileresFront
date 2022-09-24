@@ -25,7 +25,7 @@ const routes: Routes = [
   {path:"error", component: ErrorComponent},
   {path:"miperfil", component: UsuariosComponent},
   {path:"inmuebles", component: InmueblesComponent, canActivate: [AuthGuard]},
-  {path:"publicar", component: GenerarpublicacionComponent},
+  {path:"publicar", component: GenerarpublicacionComponent, canActivate: [AuthGuard]},
   {path: "**", redirectTo: "error", pathMatch: 'full'} //tiene que ir a pantalla error
 ];
 
