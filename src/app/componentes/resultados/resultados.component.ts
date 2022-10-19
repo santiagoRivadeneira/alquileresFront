@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
 import { ServicioService } from 'src/app/servicios/servicio.service';
+import { BusquedaComponent } from '../busqueda/busqueda.component';
 
 @Component({
   selector: 'app-resultados',
@@ -15,6 +16,11 @@ export class ResultadosComponent implements OnInit {
   otraRespuesta: string = "";
   mostrarPorDefecto: boolean = true;
   datos;
+
+
+
+
+
 
   images = [
     {
@@ -43,35 +49,11 @@ export class ResultadosComponent implements OnInit {
     this.datos = ["normal"];
   }
 
-  mostrarValorIngresado() {
-    if(!this.srv2.ocultarValores){
-    switch(this.srv.propiedad){
-      case "casa":
-      case "departamento":
-      this.respuesta="Resultados de busqueda para "+this.srv.propiedad+"s";
-      break;
-      case "todas las propiedades": 
-      this.respuesta="Resultados de busqueda para todos los tipos de propiedades";
-      break;
-    }
 
-    switch(this.srv.localidad){
-      case "Avellaneda":
-      case "Lanus":
-      case "Lomas de zamora":
-      case "Consti":
-      this.otraRespuesta="en la localidad de "+this.srv.localidad;
-      break;
-      case "todas las localidades": 
-      this.otraRespuesta="en todas las localidades:";
-      break;
-    }
-    this.localidad = this.srv.localidad;
-    this.propiedad = this.srv.propiedad;}
-  }
+ 
 
   ngOnInit(): void { 
-    this.mostrarValorIngresado();
+   
   }
 
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import axios from 'axios';
+import { ResultadosService } from 'src/app/servicios/resultados.service';
 import { ServicioService } from 'src/app/servicios/servicio.service';
 
 @Component({
@@ -8,7 +10,10 @@ import { ServicioService } from 'src/app/servicios/servicio.service';
 })
 export class BusquedaComponent implements OnInit {
 
-  constructor(public srv2: ServicioService) { }
+  constructor(public srv2: ServicioService, public resultadoSrv: ResultadosService) { }
+
+  public resultados = []
+
 
   cambiarBusqueda(){
     this.srv2.aux2 = false;
@@ -45,6 +50,28 @@ export class BusquedaComponent implements OnInit {
   
   }
 
-  ngOnInit(): void {
+  async Buscar (){
+
+    await axios.post('http://localhost:8080/api/propiedades/filtros', {
+      tipoProp: this.srv2.seleccionProp,
+      localidad: this.srv2.seleccionLoc
+    })
+    .then((response) => {
+      console.log(response.data);
+      this.resultados.push(response.data)
+    }, (error) => {
+
+      console.log(error);
+    });
+  }
+
+
+
+  ngOnInit ():  void {
+
+
+
+    
+
   }
 }

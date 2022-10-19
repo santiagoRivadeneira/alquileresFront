@@ -26,6 +26,7 @@ import { RecientesComponent } from './vistas/recientes/recientes.component';
 import { AuthGuard } from "./auth.guard"
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from './servicios/token-interceptor.service ';
+import { MiperfilComponent } from './componentes/miperfil/miperfil.component';
 
 
 
@@ -50,6 +51,7 @@ import { TokenInterceptor } from './servicios/token-interceptor.service ';
     CargarimagenComponent,
     GenerarpublicacionComponent,
     RecientesComponent,
+    MiperfilComponent,
   ],
   imports: [
     BrowserModule,

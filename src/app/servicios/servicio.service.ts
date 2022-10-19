@@ -1,9 +1,12 @@
 import { Injectable } from '@angular/core';
+import { BusquedaComponent } from '../componentes/busqueda/busqueda.component';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ServicioService {
+
+
 
   aux: boolean = true;
   aux2: boolean = true;
@@ -22,6 +25,9 @@ export class ServicioService {
   resultadoBusqueda: string ="";
 
   ocultarValores: boolean = true;
+
+
+
 
   constructor() { 
     this.datos1 = [1,2,3];

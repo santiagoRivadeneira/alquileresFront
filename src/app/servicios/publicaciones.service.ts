@@ -36,7 +36,7 @@ export class PublicacionesService {
     this.router.navigate(["/home"]);
     console.log(response);
   }, (error) => {
-    console.log("El usuario se creo correctamente")
+    console.log("El publicacion no creo correctamente")
     console.log(error);
   });
 

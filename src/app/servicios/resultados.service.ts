@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import axios from 'axios';
 import { ServicioService } from './servicio.service';
 
 @Injectable({
@@ -26,8 +27,14 @@ export class ResultadosService {
     if (this.srv.seleccionProp === "Departamento"){
       this.dpto = true;
     }
-
-
   }
+
+
+
+
+
+
+
+
 
 }

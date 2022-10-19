@@ -1,22 +1,37 @@
-<select [(ngModel)]="srv2.propiedad" (change)="srv2.capturarPropiedad()">
-    <option value="" disabled="disabled">Tipo de propiedad</option>
-    <option *ngFor="let dato of srv2.datos2">
-        {{dato}}
-    </option>
-</select>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--capturar datos de los selects-->
 
-<select [(ngModel)]="srv2.localidad" (change)="srv2.capturarLocalidadd()">
-    <option value="" disabled="disabled">Localidad</option>
-    <option *ngFor="let dato of srv2.datos3">
-        {{dato}}
-    </option>
-</select>
-
-<select [(ngModel)]="srv2.ambientes" (change)="srv2.capturarAmb()">
-    <option value="0">Cantidad de ambientes</option>
-    <option *ngFor="let dato of srv2.datos1">
-        {{dato}}
-    </option>
-</select>
-
-<button (click)="cambiarBusqueda()">Buscar</button>
+    <select [(ngModel)]="srv2.propiedad" (change)="srv2.capturarPropiedad()">
+        <option value="" disabled="disabled">Tipo de propiedad</option>
+        <option *ngFor="let dato of srv2.datos2">
+            {{dato}}
+        </option>
+    </select>
+    
+    <select [(ngModel)]="srv2.localidad" (change)="srv2.capturarLocalidadd()">
+        <option value="" disabled="disabled">Localidad</option>
+        <option *ngFor="let dato of srv2.datos3">
+            {{dato}}
+        </option>
+    </select>
+    
+    <select [(ngModel)]="srv2.ambientes" (change)="srv2.capturarAmb()">
+        <option value="0">Cantidad de ambientes</option>
+        <option *ngFor="let dato of srv2.datos1">
+            {{dato}}
+        </option>
+    </select>
+    
+    <button (click)="Buscar()">Buscar</button>
+    
+    
+</body>
+</html>

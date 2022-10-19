@@ -30,6 +30,7 @@ export class GenerarpublicacionComponent implements OnInit {
 
 
   onSubmit = async() => {
+    
     this.publicacionService.CrearPublicacion
     (
       this.precio, 

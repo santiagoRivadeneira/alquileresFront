@@ -11,6 +11,7 @@ import { GenerarpublicacionComponent } from './vistas/generarpublicacion/generar
 import { InmueblesComponent } from './vistas/inmuebles/inmuebles.component';
 import { UsuariosComponent } from './vistas/usuarios/usuarios.component';
 import { AuthGuard } from "./auth.guard"
+import { MiperfilComponent } from './componentes/miperfil/miperfil.component';
 
 
 
@@ -23,7 +24,7 @@ const routes: Routes = [
   {path:"busqueda", component: BusquedaComponent},
   {path:"resultados", component: ResultadosComponent, canActivate: [AuthGuard]},
   {path:"error", component: ErrorComponent},
-  {path:"miperfil", component: UsuariosComponent},
+  {path:"miperfil", component: MiperfilComponent},
   {path:"inmuebles", component: InmueblesComponent, canActivate: [AuthGuard]},
   {path:"publicar", component: GenerarpublicacionComponent, canActivate: [AuthGuard]},
   {path: "**", redirectTo: "error", pathMatch: 'full'} //tiene que ir a pantalla error

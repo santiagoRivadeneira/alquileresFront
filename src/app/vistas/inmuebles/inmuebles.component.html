@@ -1,12 +1,20 @@
 <div class="row">
-    <div class="carousel">
-        <app-carousel [images]="images" [autoSlide]="true" [indicators]="false"></app-carousel>
-        <!-- {{dato}} -->
-    </div>
-    <div class="col col2" *ngIf="srvProp.idPropiedad == 1">
-        <h3>{{direccion}}</h3>
-        <p>Precio: {{precio}}</p>
-        <p>Cantidad de ambientes: {{ambientes}}</p>
-        <!-- <p>Tipo de inmueble</p> -->
+
+
+    <div class="" *ngFor="let publi of publicaciones">
+        <div  *ngFor="let p of publi">
+            <div class="carousel">
+                <app-carousel [images]="images" [autoSlide]="true" [indicators]="false"></app-carousel>
+                <!-- {{dato}} -->
+            </div>
+            <div class="col col2"> 
+                <h3>{{p.direccion}}</h3>
+                <p>Precio: {{p.precio}}</p>
+                <p>Cantidad de ambientes: {{p.numeroAmb}}</p>
+            </div>
+        </div>
     </div>
 </div>
+
+
+  

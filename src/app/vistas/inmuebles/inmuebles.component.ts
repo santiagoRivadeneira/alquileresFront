@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import axios from 'axios';
 import { PropiedadService } from 'src/app/servicios/propiedad.service';
 import { ServicioService } from 'src/app/servicios/servicio.service';
 
@@ -9,6 +10,7 @@ import { ServicioService } from 'src/app/servicios/servicio.service';
 })
 export class InmueblesComponent implements OnInit {
 
+  public publicaciones = []
   precio: number;
   direccion: string;
   ambientes: number;
@@ -53,8 +55,20 @@ export class InmueblesComponent implements OnInit {
     this.ambientes = srvProp.ambientes;
     this.localidad = srvProp.localidad;
   }
- 
+
+  
+  private token = localStorage.getItem("token");
+  
   ngOnInit(): void {
+    
+    axios.get('http://localhost:8080/api/publicaciones/obtener', { headers: { Authorization: `Bearer ${this.token}` } })
+    .then((response) => {
+      this.publicaciones.push(response.data)
+      console.log(this.publicaciones)
+ 
+    }, (error) => {
+      console.log(error);
+    });
   }
 
 }

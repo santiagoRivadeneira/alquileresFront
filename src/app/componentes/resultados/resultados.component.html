@@ -3,67 +3,15 @@
         <div class="col1">
            <app-busqueda></app-busqueda><!-- barra superior -->
         </div>
+
         <div class="respuesta">
-            <!-- valores por defecto OK-->
-            <div *ngIf="srv2.ocultarValores">
-                <p>Todos los inmuebles</p>
-                <div *ngFor="let dato of datos">
-                    <div class="resultados" data-bs-toggle="modal" data-bs-target="#MODAL2">
-                        <app-inmuebles></app-inmuebles>
-                    </div>
-                </div>
-            </div>
 
-
-
-            <!-- filtros del 1er buscador -->
-            <div *ngIf="!srv2.ocultarValores && srv2.aux">
-                <p>{{respuesta}} {{otraRespuesta}}</p><!-- respuesta de home-->
-                <div class="resultados" data-bs-toggle="modal" data-bs-target="#MODAL">
-                    <app-inmuebles></app-inmuebles>
-                </div>
-            </div>
-
-            <!-- filtros del 2do buscador OK-->
-            <div *ngIf="!srv2.ocultarValores && !srv2.aux">
-            <!-- <div> -->
-                <p>{{srv2.resultadoBusqueda}}</p><!-- respuesta de barra superior, servicio-->
-                <div *ngFor="let dato of datos">
-                    <div class="resultados" data-bs-toggle="modal" data-bs-target="#MODAL">
-                        <app-inmuebles></app-inmuebles>
-                    </div>
-                    <!-- <div class="row resultados">
-                        <div class="carousel">
-                            <app-carousel [images]="images" [autoSlide]="true" [indicators]="false"></app-carousel>
-                        </div>
-                        <div class="col col2">
-                            <h3>Direccion del departamento</h3>
-                            <p>Precio</p>
-                            <p>Cantidad de ambientes</p>
-                            <p>Tipo de inmueble</p>
-                        </div>
-                    </div> -->
-                </div>
-            </div>
-
-
-
-            <!-- VENTANA MODAL -->
 
             
-              
-              <div class="modal fade" id="MODAL2" tabindex="-1" role="dialog" aria-labelledby="MODAL2Label">
-                <div class="modal-dialog" role="document">
-                  <div class="modal-content">
-                    <div class="modal-body">
-                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Volver</button>
-                      <app-inmuebles></app-inmuebles>
-                    </div>
-                  </div>
-                </div>
-              </div>
 
-            <!-- CIERRA VENTANA MODAL -->
+
+    
+         
         </div>
     </div>
 </div>

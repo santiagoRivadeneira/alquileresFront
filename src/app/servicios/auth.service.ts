@@ -12,6 +12,12 @@ export class AuthService {
 
   constructor(private router: Router) { }
 
+
+  public isLogg;
+  
+  public  UserId: number;
+
+
   async CreateUser (correo, contraseña){
 
     await axios.post('http://localhost:8080/api/usuarios', {
@@ -37,8 +43,19 @@ export class AuthService {
       contraseña: contraseña
     })
     .then((response) => {
-      console.log(response);
+      
+
+      localStorage.setItem("id", response.data.userId)
+
+
       localStorage.setItem('token', response.data.token);
+
+
+      if(response.data.token){
+        this.isLogg = true;
+      }
+
+
       this.router.navigate(["/home"])
 
     }, (error) => {
@@ -49,6 +66,7 @@ export class AuthService {
 
 
   CerrarSesion(){
+    this.isLogg = false;
     return !!localStorage.getItem('token');
   }
 
@@ -59,6 +77,7 @@ export class AuthService {
 
 
   TerminarSesion(){
+    this.isLogg = false;
     localStorage.removeItem('token');
     this.router.navigate(['/login'])
   }

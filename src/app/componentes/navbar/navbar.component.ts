@@ -15,6 +15,8 @@ export class NavbarComponent implements OnInit {
   public aux:boolean = true;
   constructor(public srv: AutenticacionService, public srvLogin: LoginService, private router: Router, public authService: AuthService) { }
 
+  
+  
   cerrarSesion(){
     this.srvLogin.email = "";
     var y = document.getElementsByClassName('container')[0];
@@ -30,6 +32,7 @@ export class NavbarComponent implements OnInit {
  
   ngOnInit(): void {
     this.srv.modal = true;
+    console.log(this.authService.isLogg)
   }
 
 }

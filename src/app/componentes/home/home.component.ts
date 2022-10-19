@@ -22,6 +22,8 @@ export class HomeComponent implements OnInit {
   seleccionLoc: string = '';
   seleccionProp: string = '';
   seleccionAmb: number = 0;
+  
+  imagen1: string ="https://fondosmil.com/fondo/60032.jpg";
 
 
   public publicaciones = []
